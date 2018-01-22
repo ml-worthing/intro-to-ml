@@ -1,0 +1,7 @@
+sudo apt-get update
+sudo apt-get install cmake
+sudo apt-get install build-essential
+
+# apt-get install protobuf-compiler - this install protobufc vb2 but we need 3
+Here how it is possible to install
+https://gist.github.com/lnquy/fb48795b10c1be393e9d86bddd7d9354
