@@ -11,6 +11,7 @@ object HelloScalaTensorflow1 extends App {
   val p2: Output = tf.placeholder(FLOAT32, Shape(2), "p2")
 
   val sum = p1 + p2
+  val sum2 = 2 * sum
 
   //create and initialize session
   val session = Session()
@@ -20,16 +21,17 @@ object HelloScalaTensorflow1 extends App {
   val feeds = Map(
     p1 -> Tensor(FLOAT32, 5, 6),
     p2 -> Tensor(FLOAT32, 4, 2)
- )
+  )
 
   //run the graph
-  val result: Tensor = session.run(feeds = feeds, sum, sum)
+  val result: Tensor = session.run(feeds = feeds, Seq(sum2, sum), sum2)
 
   //print the result of run
-  println(result.summarize(flattened = true))
+  println(result.shape)
+  println(result.summarize())
 
-  //access values under the tensor
-  result //. what ??? TODO
+//  //access values under the tensor
+//  result //. what ??? TODO
 
 }
 

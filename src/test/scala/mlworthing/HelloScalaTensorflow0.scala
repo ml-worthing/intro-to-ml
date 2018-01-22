@@ -8,9 +8,9 @@ object HelloScalaTensorflow0 extends App {
 
 //  tensor flow examples
   LinearRegression.main(Array())
-//  CIFAR.main(Array())
-//  RNNTutorialUsingPTB.main(Array())
-//  STL10.main(Array())
+  CIFAR.main(Array())
+  RNNTutorialUsingPTB.main(Array())
+  STL10.main(Array())
   MNIST.main(Array())  //it barfs ....
 }
 
