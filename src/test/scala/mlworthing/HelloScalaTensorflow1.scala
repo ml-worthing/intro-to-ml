@@ -1,0 +1,35 @@
+package mlworthing
+
+import org.platanios.tensorflow.api._
+
+object HelloScalaTensorflow1 extends App {
+
+  //simple p1 + p2
+
+  //define computation graph
+  val p1: Output = tf.placeholder(FLOAT32, Shape(2), "p1")
+  val p2: Output = tf.placeholder(FLOAT32, Shape(2), "p2")
+
+  val sum = p1 + p2
+
+  //create and initialize session
+  val session = Session()
+  session.run(targets = tf.globalVariablesInitializer()) //well, no variables in our graph but let's have it because later always it will be needed
+
+  //provide actual values into placeholders before running the graph
+  val feeds = Map(
+    p1 -> Tensor(FLOAT32, 5, 6),
+    p2 -> Tensor(FLOAT32, 4, 2)
+ )
+
+  //run the graph
+  val result: Tensor = session.run(feeds = feeds, sum, sum)
+
+  //print the result of run
+  println(result.summarize(flattened = true))
+
+  //access values under the tensor
+  result //. what ??? TODO
+
+}
+

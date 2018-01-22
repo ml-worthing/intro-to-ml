@@ -31,3 +31,5 @@ shared/.jvm
 .target
 bin/
 .ipynb_checkpoints/
+temp/
+datasets/
