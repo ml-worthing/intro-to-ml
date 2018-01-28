@@ -30,8 +30,8 @@ object HelloScalaTensorflow1 extends App {
   println(result.shape)
   println(result.summarize())
 
-//  //access values under the tensor
-//  result //. what ??? TODO
+  //  //access values under the tensor
+  //  result //. what ??? TODO
 
 }
 

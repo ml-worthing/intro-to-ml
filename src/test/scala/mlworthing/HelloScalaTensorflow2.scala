@@ -19,12 +19,11 @@ object HelloScalaTensorflow2 extends App {
   val x3: Output = x * x * x
   val x4: Output = x * x * x * x
 
-
   val xTensor: Output = tf.concatenate(Seq(x0, x1, x2, x3, x4))
 
-  val weights: Tensor = Tensor(FLOAT32, 1,2,3,-4.1,1)
+  val weights: Tensor = Tensor(FLOAT32, 1, 2, 3, -4.1, 1)
 
-  val loss: Output = tf.sum(xTensor *  weights) // any ideas how to improve this using tf.matmul or dot?
+  val loss: Output = tf.sum(xTensor * weights) // any ideas how to improve this using tf.matmul or dot?
   val learningRate = 0.001
   val opt: Op = tf.train.GradientDescent(learningRate).minimize(loss)
 
@@ -35,12 +34,11 @@ object HelloScalaTensorflow2 extends App {
 
   (0 to 100).foreach { iteration =>
     val result: Seq[Tensor] = session.run(fetches = Seq(loss, x1), targets = opt)
-//    result.foreach(tensor => println(tensor.summarize(flattened = true)))
+    //    result.foreach(tensor => println(tensor.summarize(flattened = true)))
     println(iteration, result(0).scalar, result(1).scalar)
     //    val s@Seq(resultLoss, resultX) = session.run(feeds = feedMap, Seq(loss, x), opt)
     //    println(iteration, resultX.scalar, resultLoss.scalar)
   }
-
 
 }
 

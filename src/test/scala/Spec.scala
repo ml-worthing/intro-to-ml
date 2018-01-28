@@ -4,8 +4,6 @@ import org.scalatest._
 import org.scalatest.concurrent.{ Eventually, ScalaFutures }
 import org.scalatest.prop.PropertyChecks
 
-import scala.concurrent.ExecutionContext
-
 trait Spec
   extends FreeSpecLike
   with Matchers

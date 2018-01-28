@@ -1,7 +1,9 @@
 
+import io.circe.generic.auto._
+import io.circe.syntax._
+import jupyter.api.Publish
 import org.scalatest._
 import org.scalatest.concurrent.{ Eventually, ScalaFutures }
-import org.scalatest.prop.PropertyChecks
 
 /**
  * Companion object which brings stuff when working in jupyter notebook.
@@ -16,7 +18,7 @@ package object mlworthing
   with ScalaFutures
   with StreamlinedXml
   with Inside
-  with Eventually {
+  with Eventually { self =>
 
   val test = "mlworthing package object 2"
 
