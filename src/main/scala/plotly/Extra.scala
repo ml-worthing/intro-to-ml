@@ -10,7 +10,8 @@ object Extra {
   case class Update(
     x: Option[Seq[Sequence]],
     y: Option[Seq[Sequence]],
-    `marker.size`: Option[Seq[OneOrSeq[Int]]]
+    `marker.size`: Option[Seq[OneOrSeq[Int]]],
+    text: Option[Seq[Seq[String]]]
   // other attributes ...
   )
 
@@ -18,13 +19,15 @@ object Extra {
     def apply(
       x: Seq[Sequence] = null,
       y: Seq[Sequence] = null,
-      `marker.size`: Seq[OneOrSeq[Int]] = null
+      `marker.size`: Seq[OneOrSeq[Int]] = null,
+      text: Seq[Seq[String]] = null
     // other attributes ...
     ): Update =
       Update(
         Option(x),
         Option(y),
-        Option(`marker.size`)
+        Option(`marker.size`),
+        Option(text)
       )
   }
 
@@ -60,8 +63,9 @@ object Extra {
     val xJs = e.x.map(i => "x: " + printer.pretty(i.asJson))
     val yJs = e.y.map(i => "y: " + printer.pretty(i.asJson))
     val markerSizeJs = e.`marker.size`.map(i => "'marker.size': " + printer.pretty(i.asJson) + "")
+    val textJs = e.text.map(i => "text: " + printer.pretty(i.asJson) + "")
 
-    val params = List(xJs, yJs, markerSizeJs).collect {
+    val params = List(xJs, yJs, markerSizeJs, textJs).collect {
       case Some(x) => x
     }.mkString(",\n    ")
 

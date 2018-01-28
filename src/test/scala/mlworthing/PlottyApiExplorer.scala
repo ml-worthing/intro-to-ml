@@ -7,8 +7,8 @@ import plotly.layout.Layout
 import scala.collection.immutable
 
 /**
-  * Dummy object for exploring plotty api with intellij support
-  */
+ * Dummy object for exploring plotty api with intellij support
+ */
 private object PlottyApiExplorer {
 
   import plotly._
@@ -111,16 +111,20 @@ private object PlottyApiExplorer {
       List[Double](),
       marker = Marker(
         size = Seq()
-      )
-    ).plot()
+      ),
+      text = Seq(),
+      name = "big brow fox"
+    ).plot(title = "random numbers and circles")
 
+    val words = "big brown fox jumps over the lazy dog".split(" ")
     //       waitForChart()
-    (0 to 30) foreach { i =>
+    (0 to 10) foreach { i =>
       Thread.sleep(100)
       val update = Update(
         x = Seq[Sequence](List(nextGaussian())),
         y = Seq[Sequence](List(nextGaussian())),
-        `marker.size` = Seq[OneOrSeq[Int]](List(nextInt().abs % 100))
+        `marker.size` = Seq[OneOrSeq[Int]](List(nextInt().abs % 100)),
+        text = Seq(Seq(words(i % words.size)))
       )
       extendTraces(div, update, List(0))
     }

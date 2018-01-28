@@ -38,7 +38,8 @@ class ExtraSpec extends Spec {
       Update(
         x = Seq(Seq(1, 2, 3): Sequence),
         y = Seq(Seq(11, 12, 13): Sequence),
-        `marker.size` = Seq(Seq(10, 20, 30): OneOrSeq[Int])
+        `marker.size` = Seq(Seq(10, 20, 30): OneOrSeq[Int]),
+        text = Seq(List("Boom"))
       ),
       Seq(0)
     ) shouldBe
@@ -48,7 +49,8 @@ class ExtraSpec extends Spec {
         |  {
         |    x: [[1.0,2.0,3.0]],
         |    y: [[11.0,12.0,13.0]],
-        |    'marker.size': [[10,20,30]]
+        |    'marker.size': [[10,20,30]],
+        |    text: [["Boom"]]
         |  },
         |  [0]
         |);
