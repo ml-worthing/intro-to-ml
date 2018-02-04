@@ -29,6 +29,7 @@ object HelloScalaTensorflow2 extends App {
     val x3: Output = x * x * x
     val x4: Output = x * x * x * x
     val xTensor: Output = tf.concatenate(Seq(x0, x1, x2, x3, x4))
+    //https://www.desmos.com/calculator/wrms8m8ril
     val weights: Tensor = Tensor(FLOAT32, 1, 2, 3, -4.1, 1)
     val loss: Output = tf.sum(xTensor * weights) // any ideas how to improve this using tf.matmul or dot?
     val opt: Op = tf.train.GradientDescent.apply(learningRate).minimize(loss)
