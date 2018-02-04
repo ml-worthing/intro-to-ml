@@ -29,7 +29,7 @@ object HelloScalaTensorflow1 extends App {
   //print the result of run
   println(result.shape)
   println(result.summarize())
-  println(result.entriesIterator.toList)
+  println(result.entriesIterator.toList.map(_.asInstanceOf[Float])) //explicit casting must be done in order to get the right type in scala
 
 }
 

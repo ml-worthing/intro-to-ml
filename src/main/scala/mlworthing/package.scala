@@ -22,7 +22,7 @@ package object mlworthing
 
   val test = "mlworthing package object 2"
 
-  private implicit class PipeOps[A](val a: A) extends AnyVal {
+  private[mlworthing] implicit class PipeOps[A](val a: A) extends AnyVal {
     def |>[B](f: A => B) = f(a)
   }
 
