@@ -21,7 +21,6 @@ addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.3.3")
 
 addSbtPlugin("net.virtual-void" % "sbt-dependency-graph" % "0.9.0")
 
-//addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.0.0-RC13")
-//later in jupyter notebook when importing ml-worthing it can't find dependencies because of coursier ...
+addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.0.0-RC13")
 
 addSbtPlugin("org.scalariform" % "sbt-scalariform" % "1.8.2")
