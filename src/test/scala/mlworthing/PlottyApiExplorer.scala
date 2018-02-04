@@ -129,4 +129,7 @@ private object PlottyApiExplorer {
       extendTraces(div, update, List(0))
     }
   }
+
+  val interp: ammonite.runtime.InterpAPI = ??? //provided in jupyter
+
 }
