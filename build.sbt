@@ -19,7 +19,7 @@ lazy val introToMl = (project in file(".")).settings(
   // https://oss.sonatype.org/index.html#nexus-search;quick~platanios
   //Last Modified: Mon Jan 22 2018 06:10:48 GMT+0000 (GMT)
 
-  libraryDependencies += "org.platanios" %% "tensorflow" % tensorFlowVersion classifier "linux-cpu-x86_64",
+  libraryDependencies += "org.platanios" %% "tensorflow" % tensorFlowVersion classifier tensorFlowClassifier,
   libraryDependencies += "org.platanios" %% "tensorflow-data" % tensorFlowVersion,
   libraryDependencies += "org.platanios" %% "tensorflow-examples" % tensorFlowVersion,
 
@@ -27,4 +27,8 @@ lazy val introToMl = (project in file(".")).settings(
 
 )
 
-lazy val tensorFlowVersion = "0.1.1-SNAPSHOT"
+lazy val tensorFlowVersion = "0.1.1"
+lazy val tensorFlowClassifier = if (sys.props.get("os.name").contains("Mac OS X"))
+  "darwin-cpu-x86_64"
+else
+  "linux-cpu-x86_64"
