@@ -2,6 +2,6 @@
 This is playground project. Example problems and introducing concepts used in Machine Learning. 
 
 # Setup
-Install _jupyter notebook_ and _jupyter notebook scala kernel_. Continue in _Setup.ipynb_.
+Install _jupyter notebook_ and _jupyter notebook scala kernel_. Continue in [Setup.ipynb](Setup.ipynb).
 
 
