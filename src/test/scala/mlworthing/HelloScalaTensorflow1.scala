@@ -1,6 +1,9 @@
 package mlworthing
 
+import java.nio.file.Paths
+
 import org.platanios.tensorflow.api._
+import org.platanios.tensorflow.api.io.events.SummaryFileWriter
 
 object HelloScalaTensorflow1 extends App {
 
@@ -25,6 +28,8 @@ object HelloScalaTensorflow1 extends App {
 
   //run the graph
   val result: Tensor = session.run(feeds = feeds, Seq(sum2, sum), sum2)
+
+  SummaryFileWriter(Paths.get(s".${this.getClass.getSimpleName}"), session.graph)
 
   //print the result of run
   println(result.shape)
