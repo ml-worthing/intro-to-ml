@@ -5,7 +5,10 @@ This is playground project. Example problems and introducing concepts used in Ma
 Install _jupyter notebook_ and _jupyter notebook scala kernel_. Continue in [Setup.ipynb](Setup.ipynb).
 
 
-# How to run tensorboard
+# How to tensorboard
+
+* See `HelloScalaTensorflow1.scala` for see how to log events to tensorboard
+* This is how you run tensor board:
 
 ```bash
 tensorboard --logdir=<path>
