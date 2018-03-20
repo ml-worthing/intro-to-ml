@@ -27,4 +27,4 @@ lazy val introToMl = (project in file(".")).settings(
 
 )
 
-lazy val tensorFlowVersion = "0.1.1-SNAPSHOT"
+lazy val tensorFlowVersion = "0.1.1"
